@@ -6,7 +6,7 @@
 /*   By: zyunusov <zyunusov@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:59:09 by zyunusov          #+#    #+#             */
-/*   Updated: 2023/01/06 16:11:52 by zyunusov         ###   ########.fr       */
+/*   Updated: 2023/01/06 20:31:28 by zyunusov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int	read_token(t_minidata *minidata)
 	{
 		j = 0;
 		i += skip_spaces(minidata->currline, i);
+		if (minidata->currline[i] == '\0')
+			return (1);
 		if (check_token(minidata->currline[i]))
 			j = handle_token(i, minidata->currline, &minidata->lexer_list);
 		else
