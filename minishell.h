@@ -233,8 +233,6 @@ int				start_executor(t_minidata *minidata);
 //Function that dups stdout and stdin
 void			dup_cmd(t_simple_cmds *cmd, t_minidata *minidata, \
 						int end[2], int fd_in);
-//Function to resplit cmd
-char			**resplit_str(char **double_arr);
 //Function for heredoc
 int				send_heredoc(t_minidata *minidata, t_simple_cmds *cmd);
 //Function that check for redirections
@@ -373,4 +371,5 @@ char			*check_value(char **splitassign, t_minidata *minidata);
 void			exit_status(t_minidata *minidata, int status);
 //Function will output a msg if waitpid fails
 void			error_child(void);
+
 #endif
